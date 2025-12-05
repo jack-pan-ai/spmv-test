@@ -66,7 +66,7 @@ namespace merged
     {
         typedef AgentSpmvPolicy<
             (sizeof(ValueT) > 4) ? 64 : 128,
-            (sizeof(ValueT) > 4) ? 5 : 7,
+            (sizeof(ValueT) > 4) ? 5 : 7, // 6 (double) better for Volta
             cub::LOAD_DEFAULT,
             cub::LOAD_DEFAULT,
             cub::LOAD_DEFAULT,

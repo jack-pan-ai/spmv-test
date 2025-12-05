@@ -12,7 +12,7 @@ CXX := g++
 
 # Flags for NVCC
 NVCC_FLAGS := -O3 -std=c++17 -arch=sm_70 -lcudart -Werror all-warnings --extended-lambda
-NVCC_FLAGS += -lineinfo -Xptxas=-v # for debug
+NVCC_FLAGS += -lineinfo -Xptxas=-v  --keep # for debug
 
 # Flags for CPU compilation
 CXX_FLAGS := -O3 -std=c++17 -Wall -Wextra -fopenmp -march=native -Wunused-parameter

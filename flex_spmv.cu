@@ -560,7 +560,7 @@ void RunTest(
     // CubDebugExit(g_allocator.DeviceAllocate((void **) &params.spm_2_ptr, sizeof(ValueT) * args.ne * args.ne2_dim));
     CubDebugExit(g_allocator.DeviceAllocate((void **) &params.gather_src_ptr,     sizeof(OffsetT) * args.ne));
     // CubDebugExit(g_allocator.DeviceAllocate((void **) &params.selector_2_ptr,     sizeof(OffsetT) * args.ne));
-    CubDebugExit(g_allocator.DeviceAllocate((void **) &params.x_ptr,       sizeof(ValueT) * args.nv * args.nv_dim));
+    CubDebugExit(g_allocator.DeviceAllocate((void **) &params.vector_ptr,       sizeof(ValueT) * args.nv * args.nv_dim));
 
     // CubDebugExit(g_allocator.DeviceAllocate((void **) &params.output_y_y_add_1_ptr,       sizeof(ValueT) * args.ne * args.ne1_dim));
     // CubDebugExit(g_allocator.DeviceAllocate((void **) &params.output_y_y_add_2_ptr,       sizeof(ValueT) * args.ne * args.ne2_dim));
@@ -576,7 +576,7 @@ void RunTest(
     CubDebugExit(cudaMemcpy((void*) params.d_row_end_offsets,   (void*) offset,     sizeof(OffsetT) * (args.num_rows + 1), cudaMemcpyHostToDevice));
     CubDebugExit(cudaMemcpy((void*) params.gather_src_ptr,       (void*) tensor_v1_idx, sizeof(OffsetT) * args.ne, cudaMemcpyHostToDevice));
     // CubDebugExit(cudaMemcpy((void*) params.selector_2_ptr,       (void*) tensor_v2_idx, sizeof(OffsetT) * args.ne, cudaMemcpyHostToDevice));
-    CubDebugExit(cudaMemcpy((void*) params.x_ptr,         (void*) tensor_v,                   sizeof(ValueT) * args.nv * args.nv_dim, cudaMemcpyHostToDevice));
+    CubDebugExit(cudaMemcpy((void*) params.vector_ptr,         (void*) tensor_v,                   sizeof(ValueT) * args.nv * args.nv_dim, cudaMemcpyHostToDevice));
 
 
     // Merge-based from scratch
